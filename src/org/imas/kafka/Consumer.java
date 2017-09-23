@@ -25,7 +25,7 @@ public class Consumer {
 	public static void main(String[] args) {
 		initActors();
 		
-		String topicName = "auth";
+		String topicName = "paymant";
 
 		KafkaConsumer<String, String> consumer = KafkaProvider.INSTANCE.getConsumer();
 		
