@@ -16,7 +16,7 @@ public enum KafkaProvider {
 		Properties props = new Properties();
 
 		props.put("bootstrap.servers", "192.168.100.199:9092");
-		props.put("group.id", "auth-grp");
+		props.put("group.id", "payment-grp");
 		props.put("enable.auto.commit", "true");
 		props.put("auto.commit.interval.ms", "1000");
 		props.put("session.timeout.ms", "30000");
