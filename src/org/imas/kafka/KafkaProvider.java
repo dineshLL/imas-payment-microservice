@@ -15,7 +15,7 @@ public enum KafkaProvider {
 	private KafkaProvider() {
 		Properties props = new Properties();
 
-		props.put("bootstrap.servers", "192.168.100.199:9092");
+		props.put("bootstrap.servers", "192.168.99.99:9092");
 		props.put("group.id", "payment-grp");
 		props.put("enable.auto.commit", "true");
 		props.put("auto.commit.interval.ms", "1000");
@@ -29,7 +29,7 @@ public enum KafkaProvider {
 		
 		
 		Properties pProps = new Properties();
-		pProps.put("bootstrap.servers", "192.168.100.199:9092");  
+		pProps.put("bootstrap.servers", "192.168.99.99:9092");  
 		pProps.put("acks", "all");
 		pProps.put("retries", 0);
 		pProps.put("batch.size", 16384);
