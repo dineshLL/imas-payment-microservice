@@ -1,6 +1,7 @@
 package org.imas.actors;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -19,6 +20,8 @@ public abstract class AbstaractActor implements Actor {
 
 	public abstract Serializable act(JsonObject payload);
 	private JsonObject inboundMessage;
+	private long start = new Date().getTime();
+	private long end = 0;
 
 	public AbstaractActor(String command) {
 		ActorRegistry.REGISTRY.register(command, this);
@@ -48,6 +51,7 @@ public abstract class AbstaractActor implements Actor {
 		JsonObject toBeSent = Json.createObjectBuilder()
 				.add("payload", json)
 				.add("imas", newMetaInfo)
+				.add("exec_time", end - start)
 				.build();
 		
 		baseProducer.sendMessage(toBeSent);
@@ -61,6 +65,7 @@ public abstract class AbstaractActor implements Actor {
 	
 	private void end(Serializable obj) {
 		logger.info("actor execution ending....");
+		this.end = new Date().getTime();
 	}
 	
 }
