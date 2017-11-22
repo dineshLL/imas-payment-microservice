@@ -28,7 +28,7 @@ public class MetaMessageProducer implements MessageProducer {
 			String cmd;
 			String role;
 			
-			if(imas.getString("cmd").equals("ack")) {
+			if(!imas.getString("cmd").equals("end_ack")) {
 				hop = imas.getInt("hop");
 				hop++;
 				cmd = "ack";

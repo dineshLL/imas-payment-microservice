@@ -1,3 +1,3 @@
 git add .
-git commit -m "kafka ip change"
+git commit -m "end_ack bug"
 git push
